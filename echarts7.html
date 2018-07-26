@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>后台登录-X-admin2.0</title>
+        <meta name="renderer" content="webkit|ie-comp|ie-stand">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+
+        <style>
+            .page{
+                margin-top: 20px;
+                text-align: center;
+
+            }
+            .page a{
+                display: inline-block;
+                background: #fff url() 0 0 no-repeat;
+                color: #888;
+                padding: 10px;
+                min-width: 15px;
+                border: 1px solid #E2E2E2;
+
+            }
+            .page span{
+                display: inline-block;
+                padding: 10px;
+                min-width: 15px;
+                border: 1px solid #E2E2E2;
+            }
+            .page .current{
+                display: inline-block;
+                background: #009688 url() 0 0 no-repeat;
+                color: #fff;
+                padding: 10px;
+                min-width: 15px;
+                border: 1px solid #009688;
+            }
+        
+</style>
+    </head>
+    <body>
+            <div class="x-body">
+                    <blockquote class="layui-elem-quote" style="border-radius: 5px;margin-bottom: 10px;">
+                       <span style="font-size: 16px;">汇总报表</span>
+                    </blockquote>
+                    <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+                    <div id="main" style="width: 100%;height:350px;">
+
+                        <div style="height:40px;margin-top: 20px;">
+                           <span style="font-size: 15px;float: left;"> 选择日期：</span>
+                           <input type="text" id="birthday" style="height: 20px;float: left;border-radius: 5px">                                          
+                            <input type="button" value="导出" style="float: right;width:60px;height: 25px;background-color: #009688;color: white;border: none;border-radius: 5px;">
+                            <select style="float: right;width:115px;height: 25px;margin:0px 10px;">
+                                <option >全部</option>
+                                <option >一级部门</option>
+                                <option >二级部门</option>
+                                <option >三级部门</option>                                
+                            </select>
+                            <span style="font-size: 15px;float:  right;"> 选择部门：</span>
+                            <select style="float: right;width: 115px;height: 25px;margin:0px 10px;">
+                                <option >第一季度</option>
+                                <option >第二季度</option>
+                                <option >第三季度</option>
+                                <option >第四季度</option>                                
+                            </select>                       
+
+                        </div>
+                                                    
+                            <table class="layui-table">
+                                <thead>
+                                        <th height="30">序号</th>
+                                        <th>用户名</th>                                                                      
+                                        <th>部门</th>
+                                        <th>在职天数</th>
+                                        <th>认定分数</th>
+                                        <th>职级系数</th>  
+                                        <th>时间系数</th>    
+                                        <th>绩效分数</th>                                              
+                                        <th>绩效奖金</th>                                            
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td height="30">1</td>
+                                        <td>12</td>
+                                        <td>21</td>
+                                        <td>12</td>
+                                        <td>222</td>                                   
+                                        <td>22</td>
+                                        <td>12</td>
+                                        <td>22</td>
+                                        <td>12</td>  
+                                    </tr>		
+                                </tbody>
+                            </table> 
+                            <div class="page">
+                    <a class="prev" href="">&lt;&lt;</a>
+                    <a class="current" href="">1</a>
+                    <a class="num" href="">2</a>
+                    <a class="num" href="">3</a>           
+                    <a class="next" href="">&gt;&gt;</a>
+                </div>                      
+                         </div> 
+                                               
+             </div>
+    </body>
+
+    <script src="./laydate/laydate.js"></script>
+	<script>
+		laydate.render({
+			elem: '#birthday' //指定元素
+		});
+
+        var offset = 0;
+        var pageSize = 5;
+        var data = [];
+
+        function prev(){
+            if (offset>0){
+                offset-=pageSize;
+                render($tab, data.slice(offset, offset+pageSize));
+            }
+        }
+        
+        function next(){
+            if(offset<(data.length-pageSize)){
+                offset+=pageSize;
+                render($tab, data.slice(offset, offset+pageSize));
+            }
+        }   
+	</script>
+</html>

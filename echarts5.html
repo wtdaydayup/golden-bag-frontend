@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>后台登录-X-admin2.0</title>
+
+        <!--   <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+          <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script> -->
+
+          <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+          <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+          <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+          <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+            <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+
+
+
+<!-- 
+        <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://cdn.bootcss.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="http://cdn.bootcss.com/bootstrap/3.3.1/js/npm.js"></script>
+        <link href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">  -->
+
+<style type="text/css">
+
+        th{
+            text-align:center;
+
+        }
+            .botton_center{
+            text-align: left;
+            width: 52%;
+        }
+
+
+
+     .select_1{
+            height: 20% !important;
+            width: 70%;
+
+        }
+        .textarea_left{
+            border: none;
+            height: 92%;
+            width: 100%;
+
+        }
+        .textarea_bottom{
+             border: none;
+            height: 30px;
+            width: 100%;
+
+        }
+
+        .textarea_di{
+            border: none;
+            height: 80px;
+            width: 100%;
+        }
+
+        .text_left{
+
+             border: none;
+            height: 100%;
+            width: 100%;
+        }
+        .text_right{
+             border: none;
+            height: 100%;
+            width: 100%;
+
+        }
+</style>
+
+<script type="text/javascript">
+
+
+
+$(function(){
+    $("#buttom_1").click(function(){
+        var num = $('#select_1 option:selected').val();
+        var num_1=$('#yewu_1').html();
+        console.log();
+       if (num==num_1) {
+        }
+       else{
+        $('#yewu_1').html(num);
+       }
+    })
+
+//添加按钮开始
+    
+
+
+
+//添加按钮结束
+
+
+
+
+//修改按钮开始
+    $("#buttom_3").click(function(){
+        var num_1=$('#yewu_1').html();
+
+
+
+
+
+})
+//修改按钮结束
+
+
+
+
+})
+
+
+</script>
+
+</head>
+<body>
+
+
+
+
+<!-- 修改跳转页面开始 -->
+
+ <!-- 模态框 -->
+  <div class="modal fade" id="myModal_xiugai">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+   
+        <!-- 模态框头部 -->
+        <div class="modal-header">
+        <font size="5px">修改考评表</font>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+   
+        <!-- 模态框主体 -->
+        <div class="modal-body">
+
+            <div style="text-align:center;margin-bottom: 15px;">
+           
+                <font size="4px">考评表名称：</font>
+                <input type="text" placeholder="例：员工季度绩效考核表" style="border-radius:3px; height:30px; ">
+            </div>
+    <div class="center_table" style="width:90%;margin:0 auto;">
+        <table class="layui-table">
+            <colgroup>
+                <col width="200">
+
+             </colgroup>
+                        <thead>
+                            <tr style="background: #EBEBE4;">
+                                <th >考核项目</th> 
+                                <th colspan="5">评分参考标准</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td width="100" rowspan="5" >
+                                <textarea id="xg_width_2_1" class="text_left" placeholder="例：(1)基础操守"></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="5">
+                                 <textarea id="xg_width_2_2" class="text_right" placeholder="例：A.非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力"></textarea> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" >
+                                    <textarea  id="xg_width_3_2" class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > 
+                                 <textarea  id="xg_width_4_2" class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > 
+                                <textarea id="xg_width_5_2" class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea>
+                            </td>
+                        </tr>
+                          <tr>
+                            <td width="100" rowspan="5">
+                                <textarea id="xg_width_6_1" class="text_left" placeholder="例：(1)基础操守"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"> <textarea class="text_right" id="xg_width_6_2" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea id="xg_width_7_2" class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea id="xg_width_8_2" class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea id="xg_width_9_2" class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                      <tr>
+                            <td width="100" rowspan="5"><textarea id="xg_width_10_2" class="text_left" placeholder="例：(1)基础操守"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" >  <textarea id="xg_width_11_2" class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea id="xg_width_12_2" class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea id="xg_width_13_2" class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea id="xg_width_14_2" class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                      <tr>
+                            <td width="100" rowspan="5"><textarea id="xg_width_15_1" class="text_left" placeholder="例：(1)基础操守"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <td width="100" rowspan="5"><textarea class="text_left" placeholder="例：(1)基础操守"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td width="100" rowspan="5"><textarea class="text_left" placeholder="例：(1)基础操守"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" >  <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"> <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"> <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                       
+                        <tr>
+                            <td width="100" colspan="10"> <textarea class="text_right" placeholder="例：工作总结、改进和工作目标计划"></textarea> </td>
+                        </tr>
+                        <tr>
+                            <td width="100" colspan="10">
+                             <textarea class="text_right" placeholder="例:工作总结（包括主要工作内容，计划完成情况、主要成果，个人取得的进步等）："></textarea></td>
+                        </tr>
+                        
+                        <tr>
+                            <td width="100" colspan="10"><textarea class="text_right" placeholder="例:2．你觉得自身工作中还存在哪些问题及改进计划？对公司的工作有何意见和建议？"></textarea></td>
+                        </tr>
+                       
+                        <tr>
+                            <td width="100" colspan="10"><textarea class="text_right" placeholder="例:3．你下一个阶段的工作目标和计划："></textarea></td>
+                        </tr>
+                       
+                        <tr>
+                            <td width="100" colspan="10"><textarea class="text_right" placeholder="例:直接经理评价和改进建议"></textarea></td>
+                        </tr>
+                    <tbody>
+
+                 </table>
+
+            
+        </div>
+        <div style="text-align: center;">
+            <button id="button_tijiao"  onclick="buttom()" class="layui-btn layui-btn-sm" style="background-color: #009688;color: white;border:none;width: 50px;height:30px;border-radius:5px;">提交</button>
+       </div>
+
+        </div>  
+        <!-- 模态框底部 -->   
+      </div>
+    </div>
+</div>
+
+
+
+<!-- 修改跳转页面结束 -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+<!-- 添加跳转页面开始 -->
+  <!-- 模态框 -->
+  <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+   
+        <!-- 模态框头部 -->
+        <div class="modal-header">
+        <font size="5px">添加考评表</font>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+   
+        <!-- 模态框主体 -->
+        <div class="modal-body">
+
+            <div style="text-align:center;margin-bottom: 15px;">
+           
+                <font size="4px">考评表名称：</font>
+                <input type="text" placeholder="例：员工季度绩效考核表" style="border-radius:3px; height:30px; ">
+            </div>
+
+    <div class="center_table" style="width:90%;margin:0 auto;">
+        <table class="layui-table">
+            <colgroup>
+                <col width="200">
+
+             </colgroup>
+                        <thead>
+                            <tr style="background: #EBEBE4;">
+                                <th >考核项目</th> 
+                                <th colspan="5">评分参考标准</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                            <td width="100" rowspan="5" >
+                                <textarea class="text_left" placeholder="例：(1)基础操守"></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="5">
+                                 <textarea class="text_right" placeholder="例：A.非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力"></textarea> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" >
+                                    <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > 
+                                 <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > 
+                                <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea>
+                            </td>
+                        </tr>
+                          <tr>
+                            <td width="100" rowspan="5">
+                                <textarea class="text_left" placeholder="例：(1)基础操守"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"> <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                      <tr>
+                            <td width="100" rowspan="5"><textarea class="text_left" placeholder="例：(1)基础操守"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" >  <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                      <tr>
+                            <td width="100" rowspan="5"><textarea class="text_left" placeholder="例：(1)基础操守"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+
+                        <tr>
+                            <td width="100" rowspan="5"><textarea class="text_left" placeholder="例：(1)基础操守"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                            
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td width="100" rowspan="5"><textarea class="text_left" placeholder="例：(1)基础操守"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" >  <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"> <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5"> <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" > <textarea class="text_right" placeholder="例：B.较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。"></textarea></td>
+                        </tr>
+                       
+                        <tr>
+                            <td width="100" colspan="10"> <textarea class="text_right" placeholder="例：工作总结、改进和工作目标计划"></textarea> </td>
+                        </tr>
+                        <tr>
+                            <td width="100" colspan="10">
+                             <textarea class="text_right" placeholder="例:工作总结（包括主要工作内容，计划完成情况、主要成果，个人取得的进步等）："></textarea></td>
+                        </tr>
+                        
+                        <tr>
+                            <td width="100" colspan="10"><textarea class="text_right" placeholder="例:2．你觉得自身工作中还存在哪些问题及改进计划？对公司的工作有何意见和建议？"></textarea></td>
+                        </tr>
+                       
+                        <tr>
+                            <td width="100" colspan="10"><textarea class="text_right" placeholder="例:3．你下一个阶段的工作目标和计划："></textarea></td>
+                        </tr>
+                       
+                        <tr>
+                            <td width="100" colspan="10"><textarea class="text_right" placeholder="例:直接经理评价和改进建议"></textarea></td>
+                        </tr>
+                    <tbody>
+
+                 </table>
+
+            
+        </div>
+        <div style="text-align: center;">
+            <button id="buttom_tijiao"  onclick="buttom()" class="layui-btn layui-btn-sm" style="background-color: #009688;color: white;border:none;width: 50px;height:30px;border-radius:5px;">提交</button>
+       </div>
+
+        </div>  
+        <!-- 模态框底部 -->   
+      
+      </div>
+    </div>
+</div>
+    <!-- 添加跳转页面结束 --> 
+
+
+
+
+
+
+
+
+
+    <div class="com_main">
+        
+    <div class="com_top">
+        <blockquote class="layui-elem-quote" style="border-radius:5px; margin:20px;">模板管理</blockquote>
+    </div>
+    <div class="com_center" style="width:90%;margin: 0 auto;margin-bottom:70px; ">
+
+        <div class="com_center_top" style="text-align:center; ">
+           <div class="com_center_top_left" style="float:left;">
+                <font size="5px" style="font-weight:bold" id="yewu_1">经理业绩表</font>
+           </div>
+           <div class="com_center_top_ringht" style="float:right; width:34%;" >
+               <div class="1" style="float:left;">
+                    <select id="select_1" style="width:100%;height:35px; border-radius:5px;">
+                        <option >经理业绩表</option>
+                        <option >员工业绩表</option>
+                    </select> 
+               </div>
+
+               <div class="2" style="float:left; margin:2px;">
+                        <button id="buttom_1"   class="layui-btn layui-btn-sm" style="background-color: #009688;color: white;border:none;width: 50px;height:30px;border-radius:5px;">查询</button>
+
+               </div>
+  
+
+
+                <div>
+                     <button id="buttom_2"  onclick="buttom_tianjia()" class="layui-btn layui-btn-sm" data-toggle="modal" data-target="#myModal"
+ style="background-color: #009688;color: white;border:none;width: 50px;height:30px;border-radius:5px; float:left;margin-top: 2px;">添加</button>
+               </div>
+                <div>
+                    <button id="buttom_3"  onclick="buttom_xiugai()" class="layui-btn layui-btn-sm" data-toggle="modal" data-target="#myModal_xiugai" style="background-color: #009688;color: white;border:none;width: 50px;height:30px;border-radius:5px;  float:left;margin-top: 2px;margin-left: 2px;">修改</button>
+                </div>
+                <div>
+                    <button id="buttom_4"  onclick="buttom()" class="layui-btn layui-btn-sm" style="background-color: #009688;color: white;border:none;width: 50px;height:30px;border-radius:5px;  float:left;margin-top: 2px;margin-left: 2px;">删除 </button>
+                </div>
+
+
+           </div>
+        </div>
+        
+
+    </div>
+
+
+    <div class="center_table" style="width:90%;margin:0 auto;">
+        <table class="layui-table">
+            <colgroup>
+                <col width="100">
+                <col width="400">
+                <col width="100">
+                <col width="200">
+            </colgroup>
+                <thead>
+                        <tr>
+                            <th class="width_1_1">考核项目</th> 
+                            <th class="width_1_2" colspan="5">评分参考标准</th>
+                            <th class="width_3">分值</th>
+                            <th class="width_4">自评得分</th>
+                            <th class="width_5">备注</th>
+                        </tr>
+                </thead>
+                  <tbody>
+                        <tr>
+                            <td width="100" rowspan="5" class="width_2_1">(1)基础操守</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_2_2"> A. 非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力。</td>
+                            <td width="100">10</td>
+                            <td width="100" rowspan="4"></td>
+                            <td width="100" rowspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_3_2">B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+                            <td width="100">7</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_4_2">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+                            <td width="100">4</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_5_2">D. 自我约束能力差，常有违纪违规的现象。</td>
+                            <td width="100">1</td>
+                        </tr>
+                          <tr>
+                            <td width="100" rowspan="5" class="width_6_1">(2)工作态度</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_6_2"> A.对公司及公司文化有很高的认同感，有团队合作精神，具有积极正面的工作态度，昂扬向上的精神风貌，工作任劳任怨，认真负责，一丝不苟，不惧困难，敢于担当，主动性强。 .</td>
+                            <td width="100">10</td>
+                            <td width="100" rowspan="4"> </td>
+                          
+                            <td width="100px" rowspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_7_2">B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+                            <td width="100">7</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_8_2">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+                            <td width="100">4</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_9_2">D. 自我约束能力差，常有违纪违规的现象。</td>
+                            <td width="100">1</td>
+                        </tr>
+                      <tr>
+                            <td width="100" rowspan="5" class="width_10_1">(1)基础操守</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_10_2"> A. 非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力。</td>
+                            <td width="100">10</td>
+                            <td width="100" rowspan="4"></td>
+
+                            <td width="100" rowspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_11_2">B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+                            <td width="100">7</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_12_2">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+                            <td width="100">4</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_13_2">D. 自我约束能力差，常有违纪违规的现象。</td>
+                            <td width="100">1</td>
+                        </tr>
+                      <tr>
+                            <td width="100" rowspan="5" class="width_14_1">(1)基础操守</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_14_2"> A. 非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力。</td>
+                            <td width="100">10</td>
+                            <td width="100" rowspan="4"></td>
+                            <td width="100" rowspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_15_2" >B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+                            <td width="100">7</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_16_2">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+                            <td width="100">4</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_17_2">D. 自我约束能力差，常有违纪违规的现象。</td>
+                            <td width="100">1</td>
+                        </tr>
+
+                        <tr>
+                            <td width="100" rowspan="5" class="width_18_1">(1)基础操守</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_18_2"> A. 非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力。</td>
+                            <td width="100">10</td>
+                            <td width="100" rowspan="4"></td>
+                            <td width="100" rowspan="4"> </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_19_2">B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+                            <td width="100">7</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_20_2">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+                            <td width="100">4</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_21_2">D. 自我约束能力差，常有违纪违规的现象。</td>
+                            <td width="100">1</td>
+                        </tr>
+                        <tr>
+                            <td width="100" rowspan="5" class="width_22_1">(1)基础操守</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_21_2"> A.非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力。</td>
+                            <td width="100">10</td>
+                            <td width="100" rowspan="4">
+                            </td>
+
+                            <td width="100" rowspan="4"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_22_2" >B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+                            <td width="100">7</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_23_2">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+                            <td width="100">4</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="width_24_2">D. 自我约束能力差，常有违纪违规的现象。</td>
+                            <td width="100">1</td>
+                        </tr>
+                       
+
+                        <tr>
+                            <td colspan="6" style="text-align: left;">合计:</td>
+                            <td width="100"></td>
+                            <td width="100"></td>
+                            <td width="100"></td>
+                        </tr>
+                        <tr>
+                            <td width="100" colspan="10"> 工作总结、改进和工作目标计划</td>
+                        </tr>
+                        <tr>
+                            <td width="100" colspan="10">1．工作总结（包括主要工作内容，计划完成情况、主要成果，个人取得的进步等）：</td>
+                        </tr>
+                        <tr>
+                            <td width="100" height="50" colspan="10"></td>
+                        </tr>
+                        <tr>
+                            <td width="100" colspan="10">2．你觉得自身工作中还存在哪些问题及改进计划？对公司的工作有何意见和建议？</td>
+                        </tr>
+                        <tr>
+                            <td width="100" height="50" colspan="10"></td>
+                        </tr>
+                        <tr>
+                            <td width="100" colspan="10">3．你下一个阶段的工作目标和计划：</td>
+                        </tr>
+                        <tr>
+                            <td width="100" height="50" colspan="10"> </td>
+                        </tr>
+                        <tr>
+                            <td width="100" colspan="10">直接经理评价和改进建议：</td>
+                        </tr>
+                        <tr>
+                            <td width="100" height="50" colspan="10"></td>
+                        </tr>
+                        </tbody>
+                </table>
+
+            
+        </div>
+
+
+
+
+
+
+    </div>
+                
+
+    </body>
+</html>

@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>后台登录-X-admin2.0</title>
+        <meta name="renderer" content="webkit|ie-comp|ie-stand">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="./css/font.css">
+        <link rel="stylesheet" href="./css/xadmin.css">
+
+        <script src="http://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+        <script src="http://cdn.bootcss.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="http://cdn.bootcss.com/bootstrap/3.3.1/js/npm.js"></script>
+
+
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE-edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Bootstrap 101 Template</title>
+        <link href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap-theme.min.css" rel="stylesheet">
+        <link href="http://cdn.bootcss.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+
+        <style type="text/css">
+        th{
+            text-align:center;
+
+        }
+        .botton_center{
+            text-align: left;
+            width: 52%;
+        }
+
+        .select_1{
+            height: 20% !important;
+            width: 70%;
+
+        }
+        .textarea_left{
+            border: none;
+            height: 92%;
+            width: 100%;
+
+        }
+        .textarea_bottom{
+             border: none;
+            height: 30px;
+            width: 100%;
+
+        }
+
+        .textarea_di{
+            border: none;
+            height: 80px;
+            width: 100%;
+        }
+/*        .width_1{
+            width: 12%;
+        }
+        .width_2{
+            width: 50%;
+        }
+        .width_3{
+            width: 12%;
+        }
+        .width_4{
+            width: 12%;
+        }
+/*        .width_5{
+            width: 12%;
+        }*/*/
+        </style>
+    </head>
+    <body>
+<div class="x-body">
+        <blockquote class="layui-elem-quote" style="border-radius: 5px;">考评录入</blockquote>
+        <div id="main" style="width: 100%;height:500px;">
+
+<thead>
+    <tr role="row">
+        <th colspan="6" >
+                 <div class="col-sm-12" style="text-align:center;margin-bottom:20px;margin-top:20px;">
+                     <label ><font size="4px">员工业绩表</font></label></div>
+        </th>
+        </tr>
+            <tr role="row">
+                <td colspan="6" rowspan="6" style="background-color: #fff;">
+                <div class="box-body" style="border: 1px solid #ccc;background-color: #f7f6f6;padding: 10px;border-radius: 12px;">
+        <div class="modal-body" style="padding-top:25px">
+        <div class="row">
+        <label class=" col-sm-2"> 
+        <span style="padding-left:25px"> 姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span></label>
+                <input class="col-sm-3" type="text" id="adduserName" name="userName" disabled="disabled" placeholder="value" style="border-radius:6px;height: 32px;">
+        <label class=" col-sm-1"> </label>
+
+        <label class="col-sm-2"><span style="padding-left:25px"> 部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;门：</span></label>
+        <input class="col-sm-3" type="text" id="adduserName" name="userName" disabled="disabled" placeholder="value" style="border-radius: 6px;height: 32px;">                                                                  
+        
+      </div>
+      
+      <div class="row" style="padding-top: 30px;">
+        <label class=" col-sm-2"> 
+        <span style="padding-left: 25px;"> 组&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：</span></label>
+                <input class="col-sm-3" type="text" id="adduserName" name="userName" disabled="disabled" placeholder="value" style="border-radius: 6px;height: 32px;">
+        <label class=" col-sm-1"> </label>
+
+        <label class="col-sm-2"><span style="padding-left:25px"> 岗&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;位：</span></label>
+         <input class="col-sm-3" type="text" id="adduserName" name="userName" disabled="disabled" placeholder="value" style="border-radius: 6px;height: 32px;">                                                                   
+      </div>
+     
+        
+        <div class="row" style="padding-top: 30px;">
+         <label class="col-sm-2"><span style="padding-left:25px">直接经理：</span></label>
+            <input class="col-sm-3" type="text" id="updatejob" name="job" disabled="disabled" placeholder="value" style="border-radius: 6px;height: 32px;">
+        <label class=" col-sm-1"> </label>
+            <label class="col-sm-2"><span style="padding-left:25px">间接经理：</span></label>
+             <input class="col-sm-3" id="adddirectManager" name="directManager" disabled="disabled" placeholder="value" style="border-radius: 6px;height: 32px;">
+            
+        </div>
+        
+        
+         <div class="row" style="padding-top: 30px;">
+            <label class="col-sm-2" style="margin-top: 8px;"> <span style="padding-left:25px">年&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;份：</span></label>
+                    <span class="col-sm-3" style="margin: 0px;padding: 0px;">
+                            <div class="input-group date " id="date1" style="width: 100%"> 
+
+
+                                 <input maxlength="4" type="text" class="form-control " name="time" id="timeyear" onchange="emptyQuarter()" placeholder="value" style="border-radius: 6px;height: 32px;"> 
+                            </div>
+                    </span> 
+            <label class=" col-sm-1"> </label>
+            <label class="col-sm-2" style="margin-top: 8px;">
+                <span style="padding-left:25px"> 季&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;度：</span>
+            </label>
+            <select class="col-sm-3" name="quarter" id="checkQuarter" onchange="checkInputTime()" style="border-radius: 6px;height: 32px;" >
+                    <option value="">-选择季度-</option>
+                    <option value="1">第一季度</option>
+                    <option value="2">第二季度</option>
+                    <option value="3">第三季度</option>
+                    <option value="4">第四季度</option>
+            </select>  
+        </div>
+        
+    </div>
+        
+
+</td>
+</tr>
+</thead>
+</div>
+<div class="main_botton" style="margin-top:2%;margin-bottom:4%;" >
+        
+
+<table border="1" width="100%" cellspacing="0" cellpadding="0" style="text-align:center; letter-spacing:1px;line-height:200%; font-family:'宋体';border-radius: 6px; margin:0 auto;">
+    <tr style="background: #EBEBE4;">
+        <th class="width_1" >考核项目</th> 
+        <th class="width_2" colspan="5">评分参考标准</th>
+        <th class="width_3">分值</th>
+        <th class="width_4">自评得分</th>
+
+        <th class="width_5">备注</th>
+    </tr>
+    
+    <tr>
+        <td width="100" rowspan="5" >(1)基础操守</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">A. 非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力。</td>
+        <td width="100">10</td>
+        <td width="100" rowspan="4">
+        <select class="select_1">
+          <option>10</option>  
+          <option>7</option> 
+          <option>4</option> 
+          <option>1</option> 
+        </select> 
+        </td>
+       
+        <td width="100" rowspan="4">
+            <textarea class="textarea_left" placeholder="value"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+        <td width="100">7</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+        <td width="100">4</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">D. 自我约束能力差，常有违纪违规的现象。</td>
+        <td width="100">1</td>
+    </tr>
+      <tr>
+        <td width="100" rowspan="5">(2)工作态度</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">A.对公司及公司文化有很高的认同感，有团队合作精神，具有积极正面的工作态度，昂扬向上的精神风貌，工作任劳任怨，认真负责，一丝不苟，不惧困难，敢于担当，主动性强。 .</td>
+        <td width="100">10</td>
+        <td width="100" rowspan="4">
+        <select class="select_1">
+          <option>10</option>  
+          <option>7</option> 
+          <option>4</option> 
+          <option>1</option> 
+        </select> 
+        </td>
+      
+        <td width="100px" rowspan="4">
+             <textarea class="textarea_left" placeholder="value"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+        <td width="100">7</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+        <td width="100">4</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">D. 自我约束能力差，常有违纪违规的现象。</td>
+        <td width="100">1</td>
+    </tr>
+  <tr>
+        <td width="100" rowspan="5">(1)基础操守</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">A. 非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力。</td>
+        <td width="100">10</td>
+        <td width="100" rowspan="4">
+        <select class="select_1">
+          <option>10</option>  
+          <option>7</option> 
+          <option>4</option> 
+          <option>1</option> 
+        </select> 
+        </td>
+
+        <td width="100" rowspan="4">
+             <textarea class="textarea_left" placeholder="value"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+        <td width="100">7</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+        <td width="100">4</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">D. 自我约束能力差，常有违纪违规的现象。</td>
+        <td width="100">1</td>
+    </tr>
+  <tr>
+        <td width="100" rowspan="5">(1)基础操守</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">A. 非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力。</td>
+        <td width="100">10</td>
+        <td width="100" rowspan="4">
+        <select class="select_1">
+          <option>10</option>  
+          <option>7</option> 
+          <option>4</option> 
+          <option>1</option> 
+        </select> 
+        </td>
+
+        <td width="100" rowspan="4">
+             <textarea class="textarea_left" placeholder="value"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+        <td width="100">7</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+        <td width="100">4</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">D. 自我约束能力差，常有违纪违规的现象。</td>
+        <td width="100">1</td>
+    </tr>
+
+    <tr>
+        <td width="100" rowspan="5">(1)基础操守</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">A. 非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力。</td>
+        <td width="100">10</td>
+        <td width="100" rowspan="4">
+        <select class="select_1">
+          <option>10</option>  
+          <option>7</option> 
+          <option>4</option> 
+          <option>1</option> 
+        </select> 
+        </td>
+
+        <td width="100" rowspan="4">
+             <textarea class="textarea_left" placeholder="value"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+        <td width="100">7</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+        <td width="100">4</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">D. 自我约束能力差，常有违纪违规的现象。</td>
+        <td width="100">1</td>
+    </tr>
+    <tr>
+        <td width="100" rowspan="5">(1)基础操守</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">A.非常自觉遵守公司及驻场的各项规章制度，以身作则，起模范带头作用，有很强的自我约束能力。</td>
+        <td width="100">10</td>
+        <td width="100" rowspan="4">
+        <select class="select_1">
+          <option>10</option>  
+          <option>7</option> 
+          <option>4</option> 
+          <option>1</option> 
+        </select> 
+        </td>
+
+        <td width="100" rowspan="4">
+             <textarea class="textarea_left" placeholder="value"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">B. 较自觉遵守公司及驻场的规章制度，有较强的自我约束能力。</td>
+        <td width="100">7</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">C. 一般能遵守公司及驻场的规章制度，有一定的自我约束能力。</td>
+        <td width="100">4</td>
+    </tr>
+    <tr>
+        <td colspan="5" class="botton_center">D. 自我约束能力差，常有违纪违规的现象。</td>
+        <td width="100">1</td>
+    </tr>
+   
+
+    <tr>
+        <td colspan="6" style="text-align: left;">合计:</td>
+        <td width="100">
+         <input type="text" name="" style="border:none; width: 100px; " placeholder="value">
+        </td>
+        <td width="100">
+            <input type="text" name="" style="border:none; width: 100px;" placeholder="value">
+        </td>
+
+        <td width="100">
+            <input type="text" name="" style="border:none;" placeholder="value">
+        </td>
+    </tr>
+    <tr>
+        <td width="100" colspan="10"> 工作总结、改进和工作目标计划</td>
+    </tr>
+    <tr>
+        <td width="100" colspan="10">1．工作总结（包括主要工作内容，计划完成情况、主要成果，个人取得的进步等）：</td>
+    </tr>
+    <tr>
+        <td width="100" height="50" colspan="10">
+            <textarea placeholder="value" class="textarea_di"></textarea>
+
+        </td>
+    </tr>
+    <tr>
+        <td width="100" colspan="10">2．你觉得自身工作中还存在哪些问题及改进计划？对公司的工作有何意见和建议？</td>
+    </tr>
+    <tr>
+        <td width="100" height="50" colspan="10">
+            <textarea placeholder="value" class="textarea_di"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td width="100" colspan="10">3．你下一个阶段的工作目标和计划：</td>
+    </tr>
+    <tr>
+        <td width="100" height="50" colspan="10">
+            <textarea placeholder="value" class="textarea_di"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td width="100" colspan="10">直接经理评价和改进建议：</td>
+    </tr>
+    <tr>
+        <td width="100" height="50" colspan="10">
+            <textarea placeholder="value" class="textarea_di"></textarea>
+        </td>
+    </tr>
+    <tr>
+        <td width="100" colspan="3" style="text-align: left;">间接经理审核意见</td>
+        <td width="100" colspan="7">
+            <input type="text" name="" placeholder="value" style="width:100%;border:none;">
+        </td>
+    </tr>
+    <tr>
+        <td width="100" colspan="3" style="text-align: left;">返回个人确认签名</td>
+        <td width="100" colspan="7">
+            <input type="text" name="" placeholder="value" style="width:100%;border:none;">
+        </td>
+    </tr>
+</table>
+
+<div class="" style="text-align: center; margin-top:2%;">
+    <span><button type="button" class="btn btn-primary" onclick="#" style="background-color: #009688;color: white;border: none;width:7%;border-radius: 6px;">提交</button></span>
+</div>
+
+
+ </div>
+
+ 
+</body> 
+</html>

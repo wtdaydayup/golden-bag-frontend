@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <link rel="stylesheet" href="./css/bootstrapStyle/bootstrapStyle.css" type="text/css">
+
+  <script type="text/javascript" src="./js/jquery.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.ztree.core.js"></script>
+  <script type="text/javascript" src="./js/jquery.ztree.excheck.js"></script>
+  <script type="text/javascript" src="./js/jquery.ztree.exedit.js"></script>
+
+  <link rel="stylesheet" href="./css/font.css">
+  <link rel="stylesheet" href="./css/xadmin.css">
+  <script type="text/javascript" src="./lib/layui/layui.js" charset="utf-8"></script>
+  <script type="text/javascript" src="./js/xadmin.js"></script>
+
+  <script type="text/javascript">
+    var setting = {
+    view: {
+      addHoverDom: addHoverDom,
+      removeHoverDom: removeHoverDom,
+      selectedMulti: false
+    },
+    check: {
+      enable: true
+    },
+    data: {
+      simpleData: {
+        enable: true
+      }
+    },
+    edit: {
+      enable: true
+    }
+  };
+
+  var zNodes =[
+    {id:1, pId:0, name:"管理", open:true},
+
+    {id:101, pId:1, name:"权限管理"},
+    {id:10101, pId:101, name:"部门管理"},
+    {id:10102, pId:101, name:"菜单管理"},
+    {id:10103, pId:101, name:"用户管理"},
+    {id:10104, pId:101, name:"角色管理"},
+    {id:10105, pId:101, name:"修改密码"},
+
+    {id:102, pId:1, name:"业绩管理"},
+    {id:10201, pId:102, name:"考评查看"},
+    {id:10202, pId:102, name:"考评审核"},
+    {id:10203, pId:102, name:"职级系数"},
+    {id:10204, pId:102, name:"详情报表"},
+    {id:10204, pId:102, name:"模板管理"},
+    {id:10204, pId:102, name:"考评录入"},
+    {id:10204, pId:102, name:"汇总报表"},
+    {id:10204, pId:102, name:"考评复核"},
+
+    ];
+
+  $(document).ready(function(){
+    $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+  });
+
+  var newCount = 1;
+  function addHoverDom(treeId, treeNode) {
+    var sObj = $("#" + treeNode.tId + "_span");
+    if (treeNode.editNameFlag || $("#addBtn_"+treeNode.tId).length>0) return;
+    var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
+      + "' title='add node' onfocus='this.blur();'></span>";
+    sObj.after(addStr);
+    var btn = $("#addBtn_"+treeNode.tId);
+    if (btn) btn.bind("click", function(){
+      var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+      zTree.addNodes(treeNode, {id:(100 + newCount), pId:treeNode.id, name:"new node" + (newCount++)});
+      return false;
+    });
+  };
+  function removeHoverDom(treeId, treeNode) {
+    $("#addBtn_"+treeNode.tId).unbind().remove();
+  };
+  //-->
+</script>
+
+
+<title>菜单管理</title>
+   
+</head>
+
+  <body style="font-size:14px">
+    <div class="x-nav">
+      <span class="layui-breadcrumb">
+        <a href="">权限管理</a>
+        <a>
+          <cite>菜单管理</cite></a>
+      </span>
+      <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
+        <i class="layui-icon" style="line-height:30px">ဂ</i></a>
+    </div>
+      
+    <div id="main">
+     <ul id="treeDemo" class="ztree"></ul>
+    </div>
+
+</body>
+</html>
+
+
+

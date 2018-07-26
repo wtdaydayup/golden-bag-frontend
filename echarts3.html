@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>职级系数</title>
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./css/font.css">
+    <link rel="stylesheet" href="./css/xadmin.css">
+</head>
+<style>
+    .page{
+        margin-top: 20px;
+        text-align: center;
+
+    }
+    .page a{
+        display: inline-block;
+        background: #fff url() 0 0 no-repeat;
+        color: #888;
+        padding: 10px;
+        min-width: 15px;
+        border: 1px solid #E2E2E2;
+
+    }
+    .page span{
+        display: inline-block;
+        padding: 10px;
+        min-width: 15px;
+        border: 1px solid #E2E2E2;
+    }
+    .page .current{
+        display: inline-block;
+        background: #009688 url() 0 0 no-repeat;
+        color: #fff;
+        padding: 10px;
+        min-width: 15px;
+        border: 1px solid #009688;
+    }
+        
+</style>
+
+<body>
+    <div class="x-body">
+        <blockquote class="layui-elem-quote" style="border-radius: 5px;">
+        <span style="font-size: 16px;">职级系数</span>
+        </blockquote>
+
+        <!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+        <div id="main" style="width: 100%;height:350px;">
+            <p style="float:right;margin-bottom:10px">
+               <select style="width: 150px;height: 25px">
+                    <optgroup label="项目开发中心">
+                        <option>开发一部</option>
+                        <option>开发二部</option>
+                        <option>开发三部</option>
+                        <option>开发四部</option>
+                    </optgroup>
+                    <optgroup label="研发中心">
+                        <option>研发一部</option>
+                        <option>研发二部</option>
+                        <option>研发三部</option>
+                        <option>研发四部</option>
+                    </optgroup>  
+                    <optgroup label="咨询和运营中心">
+                        <option>系统部</option>
+                        <option>运营部</option>
+                        <option>咨询数据分析部</option>
+                    </optgroup> 
+                        <option>后勤保障中心</option>                        
+                </select>
+            </p>
+
+            <div>  
+                <table class="layui-table">
+                    <thead>
+                        <th height="30px">序号</th>
+                        <th>一级部门</th>
+                        <th>二级部门</th>
+                        <th>姓名</th>
+                        <th>职级系数</th>
+                        <th>更改系数</th>    
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td height="30px">1</td>
+                            <td>12</td>
+                            <td>21</td>
+                            <td>12</td>
+                            <td>222</td>
+                            <td>22</td>                              
+                        </tr>       
+                    </tbody>
+                </table>
+
+                <div class="page">
+		            <a class="prev" href="">&lt;&lt;</a>
+		            <a class="current" href="">1</a>
+		            <a class="num" href="">2</a>
+		            <a class="num" href="">3</a>           
+		            <a class="next" href="">&gt;&gt;</a>
+		        </div>
+            </div>           
+        </div>       
+    </div>    
+</body>
+
+    <script>
+        var offset = 0;
+        var pageSize = 5;
+        var data = [];
+
+        function prev(){
+            if (offset>0){
+                offset-=pageSize;
+                render($tab, data.slice(offset, offset+pageSize));
+            }
+        }
+        
+        function next(){
+            if(offset<(data.length-pageSize)){
+                offset+=pageSize;
+                render($tab, data.slice(offset, offset+pageSize));
+            }
+        }   
+    
+    
+    </script>
+</html>
