@@ -31,11 +31,166 @@
     },
     edit: {
       enable: true
-    }
+    },
+    callback: {
+            //节点点击事件
+            onClick: onClick, 
+            //节点选中事件
+/*            onCheck: onCheck,
+*/        }
   };
 
+
+
+function onClick(e,treeId,treeNode) {
+  $(".input_add").val(treeNode.name);//修改操作用到，将树形内容填充到文本框中
+        console.log(treeNode)
+    //添加数据开始
+                  $(".button_add").click(function(){
+                    var sum = {
+                            "name":$(".input_add").val(),
+                                "parent":{
+                                  "id":treeNode.id
+                                }
+                      };
+                   $.ajax({
+                              type: "post",
+                              url:"http://dev.hn-zm.com:8080/departments",
+                              contentType: "application/json;charset utf-8",
+                              data: JSON.stringify(sum),
+                              dataType: "json",
+                              success: function (res){
+                                if(res.message == 'SUCCESS'){
+                                    json_recursion(res.data,0);           
+                                  }
+                                $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+                            }
+                      });
+                    });
+      //添加数据结束
+
+
+    //修改数据开始
+      $(".button_changes").click(function(){
+                    var sum = {
+                            "name":$(".input_add").val(),
+                           "parentIds":[treeNode.pId]
+                              };
+
+                    $.ajax({
+                          type: "post",
+                          url:"http://dev.hn-zm.com:8080/departments"+treeNode.id,
+                          contentType: "application/json;charset utf-8",
+                          data: JSON.stringify(sum),
+                          dataType: "json",
+                          success: function (res){
+                            if(res.message == 'SUCCESS'){
+                                json_recursion(res.data,0);           
+                              }
+                            $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+                            }
+                      });
+      });
+    //修改数据结束
+
+
+    //删除数据开始
+      $(".button_del").click(function(){
+          if (treeNode.children!=null) {
+                  alert("不能删除");
+            }  
+          else{
+                var sum = {
+                      "name":$(".input_add").val(),
+                      "parent":{
+                      "id":treeNode.pId
+                      }
+                };
+                $.ajax({
+                        type: "post",
+                        url:"http://dev.hn-zm.com:8080/departments"+treeNode.id,
+                        contentType: "application/json;charset utf-8",
+                        data: JSON.stringify(sum),
+                        dataType: "json",
+                        success: function (res){
+                          if(res.message == 'SUCCESS'){
+                              json_recursion(res.data,0);           
+                            }
+                          $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+                          }
+                });
+     
+          }
+
+});
+//删除数据结束
+
+}
+
+
+
+
+
+
+var zNodes =[{id:0, pId:0, name:"上海浩宜科技"}];
+
+function json_recursion (jsons,pId){ // jsons是res，  newjson 一维数组
+        for(var i= 0 ; i< jsons.length ; i ++){
+                zNodes.push({
+                    "id":jsons[i].id,
+                    "pId":pId,
+                    "name": jsons[i].name,
+                  });
+                  if(jsons[i].children !=null){
+                      json_recursion(jsons[i].children,jsons[i].id)
+                  }
+        }
+}
+
+
+
+
+
+$(function (){
+          
+          $.ajax({
+            type: "get",
+            url:"http://dev.hn-zm.com:8080/departments",
+            success: function (res){
+              if(res.message == 'SUCCESS'){
+                  json_recursion(res.data,0);           
+                }
+                $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+              }
+        });
+
+});
+
+
+
+
+
+/*        $.ajax({
+            type: "post",
+            url:"http://dev.hn-zm.com:8080/departments",
+            data:
+
+                }
+                $.fn.zTree.init($("#treeDemo"), setting, zNodes);
+              }
+        });
+*/
+
+
+
+
+
+
+
+
+/*/*
   var zNodes =[
-    {id:1, pId:0, name:"上海容大科技", open:true},
+    {id:1, pId:0, name:"上海浩宜科技", open:true},
 
     {id:101, pId:1, name:"项目开发中心"},
     {id:10101, pId:101, name:"开发一部"},
@@ -60,14 +215,13 @@
 
   $(document).ready(function(){
     $.fn.zTree.init($("#treeDemo"), setting, zNodes);
-  });
+  });*/
 
   var newCount = 1;
   function addHoverDom(treeId, treeNode) {
     var sObj = $("#" + treeNode.tId + "_span");
     if (treeNode.editNameFlag || $("#addBtn_"+treeNode.tId).length>0) return;
-    var addStr = "<span class='button add' id='addBtn_" + treeNode.tId
-      + "' title='add node' onfocus='this.blur();'></span>";
+    var addStr = "<span class='button add' id='addBtn_" + treeNode.tId+ "' title='add node' onfocus='this.blur();'></span>";
     sObj.after(addStr);
     var btn = $("#addBtn_"+treeNode.tId);
     if (btn) btn.bind("click", function(){
@@ -81,6 +235,7 @@
   };
   //-->
 </script>
+
 
 
 <title>部门管理</title>
@@ -97,11 +252,15 @@
       <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right" href="javascript:location.replace(location.href);" title="刷新">
         <i class="layui-icon" style="line-height:30px">ဂ</i></a>
     </div>
-      
+
     <div id="main">
      <ul id="treeDemo" class="ztree"></ul>
     </div>
-
+    内容：<input type="text" name="" value="123" class="input_add">
+    <button class="button_add" value="">添加</button>
+    <button class="button_changes">修改</button>
+    <button class="button_del"></button>
+1213s
 </body>
 </html>
 
